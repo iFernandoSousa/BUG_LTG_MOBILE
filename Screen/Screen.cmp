@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+	<lightning:navigation aura:id="navService"/>
+    <lightning:button onclick="{!c.goTo}">Go to Screen 2</lightning:button> 
+</aura:component>

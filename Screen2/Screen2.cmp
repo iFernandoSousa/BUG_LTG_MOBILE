@@ -1,0 +1,3 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <lightning:button onclick="{!c.goBack}">Goback to Screen 1</lightning:button> 
+</aura:component>
