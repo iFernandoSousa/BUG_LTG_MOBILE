@@ -1,6 +1,13 @@
 # Passo a Passo para reproduzir o problema
 Bug relacionado ao Lightning Component em Mobile [iOS or Android]
 
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=iFernandoSousa&repo=BUG_LTG_MOBILE">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+<br/><br/>
+
 **Titulo:** Aplicativo Mobile para de carregar componente Lightning, após chamar o método window.history.back()
 
 **Afeta:** iOS e Android
