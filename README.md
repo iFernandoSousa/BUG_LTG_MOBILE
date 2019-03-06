@@ -1,5 +1,5 @@
 # Step by step to reproduce the problem
-Bug related to Lightning Component inn Mobile [iOS or Android]
+Bug related to Lightning Component in Mobile [iOS or Android]
 
 
 <a href="https://githubsfdeploy.herokuapp.com?owner=iFernandoSousa&repo=BUG_LTG_MOBILE">
@@ -13,7 +13,7 @@ Bug related to Lightning Component inn Mobile [iOS or Android]
 **Involved:** iOS and Android
 
 **Step by step to reproduce the problem:**
-1) Login in a Salesforce ORG (Developer, Sandbox or Playgroud is affected too)
+1) Login in a Salesforce ORG (Developer, Sandbox or Playground is affected too)
 2) Make sure that "My Domain" is properly set up and configured
 3) Make sure this in the "Lightning Experience"
 4) On the top right menu, click on the gear and choose: [Developer Console]
@@ -53,7 +53,7 @@ Bug related to Lightning Component inn Mobile [iOS or Android]
     <lightning:button onclick="{!c.goBack}">Goback to Screen 1</lightning:button> 
 </aura:component>
 ```
-10) On the Right menu, click on the option Controller, e insert the code bellow:
+10) On the Right menu, click on the option Controller, and insert the code bellow:
 ```
 ({
 	goBack : function(component, event, helper) {
@@ -61,13 +61,13 @@ Bug related to Lightning Component inn Mobile [iOS or Android]
 	}
 })
 ```
-11) Acess the SETUP and find for TABS
+11) Access the SETUP and find for TABS
 12) Looking for the session Lightning Component Tabs and click in the button [New]
-13) Select the Screen component, fill in the Label and Name it as "Screen," select any icon and click on the button [Next], make sure the tab is active for all profiles.
+13) Select the Screen component, fill in the Label and Name as "Screen," select any icon and click on the button [Next], make sure the tab is active for all profiles.
 14) Repeat the process 12 and 13, this time pointing to the "Screen2" component, insert the Label and Name as "Screen2".
 15) In Setup, find for "Salesforce Navigation" that is on Mobile session, insert the "Screen" and "Screen2" to the top of the selected list and click on button [Save].
 16) Access the Salesforce Mobile app using a Mobile Phone.
-  * **a. Atention: This problem just occurs on Mobile Phone, in emulator using Google Chrome this problem not happen.**
+  * **a. Attention: This problem just occurs on Mobile Phone, in emulator using Google Chrome this problem not happen.**
 17) Open the Left menu, and choose "Screen"
   * a. Click on the button “Go to Screen 2”
   * b. On this new screen, click on the button “Goback to Screen 1”
