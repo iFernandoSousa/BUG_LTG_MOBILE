@@ -1,5 +1,5 @@
-# Passo a Passo para reproduzir o problema
-Bug relacionado ao Lightning Component em Mobile [iOS or Android]
+# Step by step to reproduce the problem
+Bug related to Lightning Component inn Mobile [iOS or Android]
 
 
 <a href="https://githubsfdeploy.herokuapp.com?owner=iFernandoSousa&repo=BUG_LTG_MOBILE">
@@ -8,27 +8,27 @@ Bug relacionado ao Lightning Component em Mobile [iOS or Android]
 </a>
 <br/><br/>
 
-**Titulo:** Aplicativo Mobile para de carregar componente Lightning, após chamar o método window.history.back()
+**Title:** Mobile Application stop loading Lightning Component, after call window.history.back() method
 
-**Afeta:** iOS e Android
+**Involved:** iOS and Android
 
-**Passo para reprodução do problema:**
-1)	Logar em uma ORG Salesforce (Developer, Sandbox ou Playgroud também são afetadas)
-2)	Certifique-se de que o “Meu Dominio” esteja devidamente ativo e configurado
-3)	Certifique-se de esta no “Lightning Expirience”
-4)	No menu superior direito, clique na engrenagem e escolha: [Developer Console]
-5)	Na tela do Developer Console, selecione o menu File -> New -> Lightning Component
-  * a. Informe o nome do componente como Screen
-  * b. Marque as opções Lightning Tab e Lightning Page
-  * c. Clique no botão Submit
-6)	No corpo do componente, inserir o código abaixo:
+**Step by step to reproduce the problem:**
+1) Login in a Salesforce ORG (Developer, Sandbox or Playgroud is affected too)
+2) Make sure that "My Domain" is properly set up and configured
+3) Make sure this in the "Lightning Experience"
+4) On the top right menu, click on the gear and choose: [Developer Console]
+5) In the Developer Console screen, select: File -> New -> Lightning Component
+  * a. Enter the name of the component as "Screen"
+  * b. Check the options: Lightning Tab and Lightning Page options
+  * c. Click on [Submit] Button
+6) In the component body, insert the code:
 ```
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
 	<lightning:navigation aura:id="navService"/>
     <lightning:button onclick="{!c.goTo}">Go to Screen 2</lightning:button> 
 </aura:component>
 ```
-7)	No menu esquerdo, clique na opção Controller, e insira o código abaixo:
+7) On the Right menu, click on the option Controller, e insert the code bellow:
 ```
 ({
 	goTo : function(component, event, helper) {
@@ -43,17 +43,17 @@ Bug relacionado ao Lightning Component em Mobile [iOS or Android]
 	}
 })
 ```
-8)	Na janela do Developer Console, clique novamente no menu File -> New -> Lightning Component
-  * a. Informe o nome do componente como Screen2
-  * b. Marque as opções Lightning Tab e Lightning Page
-  * c. Clique no botão Submit
-9)	No corpo do componente inserir o código abaixo:
+8) On the Developer Console Screen, click again on menu File -> New -> Lightning Component
+  * a. Enter the name of the component as "Screen2"
+  * b. Check the options: Lightning Tab and Lightning Page options
+  * c. Click on [Submit] Button
+9) In the component body, insert the code:
 ```
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
     <lightning:button onclick="{!c.goBack}">Goback to Screen 1</lightning:button> 
 </aura:component>
 ```
-10)	No menu esquerdo, clique na opção Controller, e insira o código abaixo:
+10) On the Right menu, click on the option Controller, e insert the code bellow:
 ```
 ({
 	goBack : function(component, event, helper) {
@@ -61,14 +61,14 @@ Bug relacionado ao Lightning Component em Mobile [iOS or Android]
 	}
 })
 ```
-11)	 Acesse o SETUP (Configurações) e procure por TABS (Guias)
-12)	Procure pela sessão Lightning Component Tabs e clique no botão [Novo]
-13)	Selecione o componente  Screen, preencha o label e nome como “Screen”, selecione qualquer ícone e clique no botão avançar, certifique-se de  que a guia esteja ativa para todos os perfis.
-14)	Repita o processo 12 e 13, dessa vez apontando para o componente  “Screen2”, insira o Label e o Nome como “Screen2”.
-15)	No menu lateral do Setup, procure por Salesforce Navigation (Navegação Salesforce),  insira o Screen e Screen2 no topo da lista de itens selecionados e clique no botão [Salvar]
-16)	Acesse o Salesforce Mobile através de um dispositivo móvel.
-  * **a.	Atenção: O problema ocorre somente no dispositivo móvel, no emulador do Google Crhome o problema não ocorre.**
-17)	Abra o menu lateral e escolha Screen
-  * a. Clique no botão “Go to Screen 2”
-  * b. Na nova tela que se abrirá, clique no botão “Goback to Screen 1”
-  * c. Repita o processo clicando novamente no botão “Go to Screen 2”, note que a tela piscará e não será carregado a Screen2.
+11) Acess the SETUP and find for TABS
+12) Looking for the session Lightning Component Tabs and click in the button [New]
+13) Select the Screen component, fill in the Label and Name it as "Screen," select any icon and click on the button [Next], make sure the tab is active for all profiles.
+14) Repeat the process 12 and 13, this time pointing to the "Screen2" component, insert the Label and Name as "Screen2".
+15) In Setup, find for "Salesforce Navigation" that is on Mobile session, insert the "Screen" and "Screen2" to the top of the selected list and click on button [Save].
+16) Access the Salesforce Mobile app using a Mobile Phone.
+  * **a. Atention: This problem just occurs on Mobile Phone, in emulator using Google Chrome this problem not happen.**
+17) Open the Left menu, and choose "Screen"
+  * a. Click on the button “Go to Screen 2”
+  * b. On this new screen, click on the button “Goback to Screen 1”
+  * c. Repeat this process, click on the button “Go to Screen 2”, now the screen will blink but not open the second screen "Screen2", and this is the main problem.
