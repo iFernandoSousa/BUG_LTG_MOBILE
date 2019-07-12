@@ -72,3 +72,6 @@ Bug related to Lightning Component in Mobile [iOS or Android]
   * a. Click on the button “Go to Screen 2”
   * b. On this new screen, click on the button “Goback to Screen 1”
   * c. Repeat this process, click on the button “Go to Screen 2”, now the screen will blink but not open the second screen "Screen2", and this is the main problem.
+  
+  
+  
